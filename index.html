@@ -19,6 +19,7 @@
     <div class="header-content">
       <img src="img/logo.jpeg" alt="Logo Jeté Studio" class="logo">
       <div class="header-title">Bienvenidos a Jeté Ballet Studio</div>
+
       <nav class="nav-links">
         <ul>
           <li><a href="#hero">Inicio</a></li>
@@ -27,6 +28,7 @@
           <li><a href="#footer">Contacto</a></li>
         </ul>
       </nav>
+
       <button class="menu-toggle" aria-label="Menú">☰</button>
     </div>
   </header>
@@ -41,7 +43,7 @@
     <!-- PROFESORA -->
     <section class="teacher" id="teacher">
       <div class="container teacher-content">
-        <img src="img/guada-baile.jpg" alt="Guadalupe Calero - Profesora de Ballet" class="teacher-photo">
+        <img src="img/guada-baile.jpg" alt="Guadalupe Calero" class="teacher-photo">
         <div class="teacher-text">
           <h2>Nuestra Profesora</h2>
           <p>
@@ -65,11 +67,13 @@
           <h3>Ballet Infantil</h3>
           <p>Iniciación al ballet para niñas y niños.</p>
         </article>
+
         <article class="card">
           <img src="img/bailarina.jpg" alt="Ballet Juvenil">
           <h3>Ballet Juvenil</h3>
           <p>Técnica y expresión para niveles intermedios.</p>
         </article>
+
         <article class="card">
           <img src="img/bailarina.jpg" alt="Ballet Adultos">
           <h3>Ballet Adultos</h3>
@@ -83,46 +87,30 @@
   <footer class="footer" id="footer">
     <p>© 2026 Jeté Ballet Studio</p>
 
-    <!-- ICONOS EN EL FOOTER -->
     <div class="social-links-footer">
       <a href="https://instagram.com/jete_balletstudio" target="_blank" aria-label="Instagram">
         <img src="img/instagram.png" alt="Instagram" class="social-icon-footer">
       </a>
-      <a href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">
+
+      <a href="https://api.whatsapp.com/send?phone=59899326379" target="_blank" aria-label="WhatsApp">
         <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-footer">
       </a>
     </div>
   </footer>
 
-  <!-- ICONOS FIJOS EN LA ESQUINA INFERIOR IZQUIERDA -->
+  <!-- ICONOS FIJOS -->
   <div class="social-fixed">
-    <a href="https://instagram.com/jete_balletstudio" target="_blank" aria-label="Instagram">
+    <a href="https://instagram.com/jete_balletstudio" target="_blank">
       <img src="img/instagram.png" alt="Instagram" class="social-icon-fixed">
     </a>
-    <a href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">
+
+    <a href="https://api.whatsapp.com/send?phone=59899326379" target="_blank">
       <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-fixed">
     </a>
   </div>
 
   <!-- JS -->
   <script>
-    // HEADER ANIMADO AL SCROLL
-    const header = document.querySelector(".header");
-    let isScrolled = false;
-
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      if(scrollY > 80 && !isScrolled){
-        header.classList.add("header--scrolled");
-        isScrolled = true;
-      }
-      if(scrollY < 20 && isScrolled){
-        header.classList.remove("header--scrolled");
-        isScrolled = false;
-      }
-    });
-
-    // MENU HAMBURGUESA
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -130,5 +118,6 @@
       navLinks.classList.toggle("nav-open");
     });
   </script>
+
 </body>
 </html>

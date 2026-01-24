@@ -289,20 +289,20 @@ section {
 .social-icon-fixed:hover {
   transform: scale(1.2); /* Pequeño efecto al pasar el mouse */
 }
-/* ICONOS FIJOS EN LA ESQUINA INFERIOR IZQUIERDA */
+/* ICONOS FIJOS */
 .social-fixed {
   position: fixed;
-  left: 1rem;
   bottom: 1rem;
+  left: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  z-index: 1000;
+  gap: 0.6rem;
+  z-index: 999;
 }
 
 .social-icon-fixed {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s ease;
 }
 
@@ -310,18 +310,17 @@ section {
   transform: scale(1.2);
 }
 
-/* ICONOS EN EL FOOTER */
+/* ICONOS EN FOOTER */
 .social-links-footer {
-  margin-top: 0.5rem;
   display: flex;
-  gap: 0.5rem;
   justify-content: center;
-  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .social-icon-footer {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s ease;
 }
 
