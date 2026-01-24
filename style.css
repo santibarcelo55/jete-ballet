@@ -18,7 +18,7 @@ h1, h2, h3 {
   letter-spacing: 0.5px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   position: sticky;
   top: 0;
@@ -40,7 +40,7 @@ h1, h2, h3 {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   position: relative;
 }
@@ -53,7 +53,6 @@ h1, h2, h3 {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #8e5aa9;
-  margin-left: 0;
 }
 
 /* TITULO HEADER */
@@ -63,13 +62,24 @@ h1, h2, h3 {
   font-size: 2.8rem;
   color: #4a3c5a;
   margin: 0;
-  z-index: 1;
 }
 
 /* MENU LINKS */
 .nav-links {
   display: flex;
   gap: 2rem;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a3c5a;
+  font-weight: 500;
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -82,7 +92,7 @@ h1, h2, h3 {
   color: #4a3c5a;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   min-height: 70vh;
   background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
@@ -96,37 +106,21 @@ h1, h2, h3 {
   color: white;
   text-align: center;
   padding: 4rem 2rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  animation: fadeInUp 1s ease forwards;
 }
 
 .hero p {
   font-size: 1.5rem;
   letter-spacing: 1px;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-  animation: fadeInUp 1s ease 0.5s forwards;
-  opacity: 0;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* PROFESORA */
+/* ================= PROFESORA ================= */
 .teacher {
   padding: 5rem 1rem;
   background: linear-gradient(135deg, #c2b4db, #efeaf7);
@@ -153,12 +147,28 @@ h1, h2, h3 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.teacher-text { max-width: 600px; }
-.teacher-text h2 { color: #8e5aa9; font-size: 2rem; margin-bottom: 0.5rem; }
-.teacher-text p { font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 1rem; }
+.teacher-text {
+  max-width: 600px;
+}
 
-/* GALERÍA */
-.gallery { text-align: center; padding: 4rem 1rem; }
+.teacher-text h2 {
+  color: #8e5aa9;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.teacher-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* ================= GALERÍA ================= */
+.gallery {
+  text-align: center;
+  padding: 4rem 1rem;
+}
 
 .cards {
   display: grid;
@@ -175,10 +185,17 @@ h1, h2, h3 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.card img { width: 100%; border-radius: 10px; margin-bottom: 1rem; }
-.card h3 { margin-bottom: 0.5rem; }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
 
-/* FOOTER */
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ================= FOOTER ================= */
 .footer {
   background-color: #8e5aa9;
   color: white;
@@ -186,40 +203,42 @@ h1, h2, h3 {
   padding: 1rem;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .header-title {
     font-size: 2.2rem;
   }
+
   .logo {
     width: 100px;
   }
 }
 
+/* 🔥 MOBILE HEADER CORREGIDO */
 @media (max-width: 768px) {
 
-  /* Header y menú */
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  .header {
+    padding: 0.5rem 0.8rem;
   }
 
-  .header-title {
-    font-size: 1.8rem;
-    text-align: center;
-    margin: 0.5rem 0;
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo {
-    width: 80px;
-    height: auto;
-    margin-left: 0;
+    width: 55px;
   }
 
-  .menu-toggle { 
-    display: block; 
-    margin-top: 0.3rem;
+  .header-title {
+    font-size: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .nav-links {
@@ -232,63 +251,39 @@ h1, h2, h3 {
     display: none;
     padding: 1rem 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    z-index: 1001;
     text-align: center;
   }
 
-  .nav-links.nav-open { display: flex; }
+  .nav-links.nav-open {
+    display: flex;
+  }
 
   .nav-links ul {
     flex-direction: column;
     gap: 0.8rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 
-  .nav-links li a {
-    color: #4a3c5a;
-    text-decoration: none;
-    font-weight: 500;
+  .teacher-content {
+    flex-direction: column;
+    text-align: center;
   }
-
-  /* Ajustes para la sección profesora */
-  .teacher-content { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 480px) {
   .header-title {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
   }
+
   .logo {
-    width: 60px;
+    width: 50px;
   }
 }
 
-/* Ajuste para que el header no tape las secciones */
+/* ================= EXTRAS ================= */
 section {
   scroll-margin-top: 120px;
 }
-/* ICONOS FIJOS EN LA ESQUINA INFERIOR IZQUIERDA */
-.social-fixed {
-  position: fixed;       /* Fijo en pantalla */
-  left: 1rem;            /* Separación del borde izquierdo */
-  bottom: 1rem;          /* Separación del borde inferior */
-  display: flex;
-  flex-direction: column; /* Iconos uno debajo del otro */
-  gap: 0.5rem;           /* Espacio entre iconos */
-  z-index: 1000;         /* Para que estén por encima de todo */
-}
 
-.social-icon-fixed {
-  width: 50px;           /* Tamaño pequeño */
-  height: 50px;
-  transition: transform 0.3s ease;
-}
-
-.social-icon-fixed:hover {
-  transform: scale(1.2); /* Pequeño efecto al pasar el mouse */
-}
 /* ICONOS FIJOS */
 .social-fixed {
   position: fixed;
@@ -310,7 +305,7 @@ section {
   transform: scale(1.2);
 }
 
-/* ICONOS EN FOOTER */
+/* ICONOS FOOTER */
 .social-links-footer {
   display: flex;
   justify-content: center;
