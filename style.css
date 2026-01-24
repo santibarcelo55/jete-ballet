@@ -187,6 +187,15 @@ h1, h2, h3 {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .header-title {
+    font-size: 2.2rem;
+  }
+  .logo {
+    width: 100px;
+  }
+}
+
 @media (max-width: 768px) {
 
   /* Header y menú */
@@ -245,6 +254,15 @@ h1, h2, h3 {
 
   /* Ajustes para la sección profesora */
   .teacher-content { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+  .logo {
+    width: 60px;
+  }
 }
 
 /* Ajuste para que el header no tape las secciones */
