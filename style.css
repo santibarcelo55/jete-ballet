@@ -332,3 +332,23 @@ h1, h2, h3 {
     text-align: center;
   }
 }
+/* ===== AJUSTE LOGO Y TITULO EN MÓVIL ===== */
+@media (max-width: 768px) {
+  .logo {
+    width: 55px; /* tamaño más pequeño para móvil */
+  }
+
+  .header-title {
+    font-size: 1.2rem; /* tamaño de texto más cómodo */
+    text-align: center;
+  }
+
+  .header-content {
+    justify-content: space-between; /* mantiene logo a la izquierda, botón hamburguesa a la derecha */
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block; /* asegura que el botón hamburguesa aparezca */
+  }
+}
