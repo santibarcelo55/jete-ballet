@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeté Ballet Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+      <img src="img/logo.jpeg" alt="Logo Jeté Studio" class="logo">
+      <div class="header-title">Bienvenidos a Jeté Ballet Studio</div>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#teacher">Profesora</a></li>
+          <li><a href="#gallery">Clases</a></li>
+          <li><a href="#footer">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <h1>Academia de danza</h1>
+      <p>Pasión • Movimiento • Disciplina</p>
+    </section>
+
+    <!-- PROFESORA -->
+    <section class="teacher" id="teacher">
+      <div class="container teacher-content">
+        <img src="img/guada-baile.jpg" alt="Guadalupe Calero - Profesora de Ballet" class="teacher-photo">
+        <div class="teacher-text">
+          <h2>Nuestra Profesora</h2>
+          <p>
+            Jeté Ballet Studio es un espacio de formación en ballet con cuatro años de trayectoria,
+            enfocado en el desarrollo técnico y artístico de sus estudiantes.
+          </p>
+          <p>
+            Las clases están a cargo de Guadalupe Calero, profesora con formación continua
+            y experiencia en cursos realizados en España.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASES -->
+    <section class="gallery" id="gallery">
+      <h2>Nuestras Clases</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="img/bailarina.jpg" alt="Ballet Infantil">
+          <h3>Ballet Infantil</h3>
+          <p>Iniciación al ballet para niñas y niños.</p>
+        </article>
+        <article class="card">
+          <img src="img/bailarina.jpg" alt="Ballet Juvenil">
+          <h3>Ballet Juvenil</h3>
+          <p>Técnica y expresión para niveles intermedios.</p>
+        </article>
+        <article class="card">
+          <img src="img/bailarina.jpg" alt="Ballet Adultos">
+          <h3>Ballet Adultos</h3>
+          <p>Clases para todos los niveles y edades.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <p>© 2026 Jeté Ballet Studio</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // HEADER ANIMADO AL SCROLL
+    const header = document.querySelector(".header");
+    let isScrolled = false;
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      if(scrollY > 80 && !isScrolled){
+        header.classList.add("header--scrolled");
+        isScrolled = true;
+      }
+      if(scrollY < 20 && isScrolled){
+        header.classList.remove("header--scrolled");
+        isScrolled = false;
+      }
+    });
+
+    // MENU HAMBURGUESA
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("nav-open");
+    });
+  </script>
+</body>
+</html>
