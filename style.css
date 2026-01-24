@@ -281,8 +281,8 @@ section {
 }
 
 .social-icon-fixed {
-  width: 64px;           /* Tamaño pequeño */
-  height: 64px;
+  width: 50px;           /* Tamaño pequeño */
+  height: 50px;
   transition: transform 0.3s ease;
 }
 
