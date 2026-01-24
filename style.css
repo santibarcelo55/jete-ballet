@@ -25,7 +25,7 @@ h1, h2, h3 {
   width: 100%;
   background-color: #c7b9df;
   z-index: 1000;
-  padding: 1.5rem 2rem;
+  padding: 0.6rem 2rem;
   transition: all 0.3s ease;
 }
 
@@ -47,11 +47,27 @@ h1, h2, h3 {
 /* ================= LOGO ================= */
 .logo {
   width: 140px;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
   border-radius: 50%;
   border: 3px solid #8e5aa9;
+  animation: logoFadeIn 0.4s ease-out;
+  transition: transform 0.3s ease;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 769px) {
+  .logo:hover {
+    transform: scale(1.03);
+  }
 }
 
 /* ================= HEADER TITLE ================= */
@@ -66,8 +82,8 @@ h1, h2, h3 {
 .nav-links {
   display: flex;
   gap: 2rem;
-   align-self: flex-end;   /*  lo baja */
-  margin-bottom: 0.4rem; /*  ajuste fino */
+  align-self: flex-end;
+  margin-bottom: 0.4rem;
 }
 
 .nav-links ul {
@@ -80,6 +96,30 @@ h1, h2, h3 {
   text-decoration: none;
   color: #4a3c5a;
   font-weight: 500;
+}
+
+/* Hover elegante desktop */
+@media (min-width: 769px) {
+  .nav-links a {
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8e5aa9;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
 }
 
 /* ================= HAMBURGER ================= */
@@ -112,13 +152,49 @@ h1, h2, h3 {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero p {
   font-size: 1.5rem;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+/* ================= CTA ================= */
+.cta-button {
+  margin-top: 2rem;
+  padding: 0.9rem 2.4rem;
+  background-color: #8e5aa9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 769px) {
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+  }
+}
+
+/* ================= HISTORIA ================= */
+.history {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #e6d7f0, #f6f4f8);
+}
+
+.history h2 {
+  color: #8e5aa9;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.history p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.8;
 }
 
 /* ================= PROFESORA ================= */
@@ -142,27 +218,12 @@ h1, h2, h3 {
 .teacher-photo {
   width: 180px;
   height: 180px;
-  object-fit: cover;
   border-radius: 50%;
   border: 3px solid #8e5aa9;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .teacher-text {
   max-width: 600px;
-}
-
-.teacher-text h2 {
-  color: #8e5aa9;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.teacher-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 1rem;
 }
 
 /* ================= GALERÍA ================= */
@@ -180,14 +241,22 @@ h1, h2, h3 {
 }
 
 .card {
-  background: #fff;
+  background: #e6d7f0; /* fondo lila */
   border-radius: 14px;
   padding: 1.5rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .card img {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -200,31 +269,39 @@ h1, h2, h3 {
   padding: 1rem;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .header-title {
-    font-size: 2.2rem;
-  }
-
-  .logo {
-    width: 100px;
-  }
+/* ================= ICONOS ================= */
+.social-fixed {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
+.social-links-footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.social-icon-fixed,
+.social-icon-footer {
+  width: 42px;
+  height: 42px;
+  opacity: 0.85;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.social-icon-fixed:hover,
+.social-icon-footer:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .header {
-    padding: 0.5rem 0.8rem;
-  }
-
-  .logo {
-    width: 55px;
-  }
-
-  .header-title {
-    font-size: 1.2rem;
-    white-space: nowrap;
-  }
-
   .menu-toggle {
     display: block;
   }
@@ -234,12 +311,11 @@ h1, h2, h3 {
     top: 100%;
     right: 0;
     width: 100%;
+    display: none;
     flex-direction: column;
     background-color: #c7b9df;
-    display: none;
-    padding: 1rem 0;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 1rem 0;
   }
 
   .nav-links.nav-open {
@@ -255,46 +331,4 @@ h1, h2, h3 {
     flex-direction: column;
     text-align: center;
   }
-}
-
-@media (max-width: 480px) {
-  .header-title {
-    font-size: 1.05rem;
-  }
-
-  .logo {
-    width: 50px;
-  }
-}
-
-/* ================= EXTRAS ================= */
-section {
-  scroll-margin-top: 120px;
-}
-
-/* ================= ICONOS ================= */
-.social-fixed,
-.social-links-footer {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.social-fixed {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  flex-direction: column;
-  z-index: 999;
-}
-
-.social-icon-fixed,
-.social-icon-footer {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
-}
-
-.social-icon-fixed:hover,
-.social-icon-footer:hover {
-  transform: scale(1.2);
 }
