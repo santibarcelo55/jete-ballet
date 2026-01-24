@@ -269,3 +269,62 @@ h1, h2, h3 {
 section {
   scroll-margin-top: 120px;
 }
+/* ICONOS FIJOS EN LA ESQUINA INFERIOR IZQUIERDA */
+.social-fixed {
+  position: fixed;       /* Fijo en pantalla */
+  left: 1rem;            /* Separación del borde izquierdo */
+  bottom: 1rem;          /* Separación del borde inferior */
+  display: flex;
+  flex-direction: column; /* Iconos uno debajo del otro */
+  gap: 0.5rem;           /* Espacio entre iconos */
+  z-index: 1000;         /* Para que estén por encima de todo */
+}
+
+.social-icon-fixed {
+  width: 64px;           /* Tamaño pequeño */
+  height: 64px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-fixed:hover {
+  transform: scale(1.2); /* Pequeño efecto al pasar el mouse */
+}
+/* ICONOS FIJOS EN LA ESQUINA INFERIOR IZQUIERDA */
+.social-fixed {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.social-icon-fixed {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-fixed:hover {
+  transform: scale(1.2);
+}
+
+/* ICONOS EN EL FOOTER */
+.social-links-footer {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon-footer {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-footer:hover {
+  transform: scale(1.2);
+}
