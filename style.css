@@ -295,14 +295,18 @@ h1, h2, h3 {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: 10px;
+  display: block;
 }
 
 .card-front h3 {
   font-size: 1.3rem;
   line-height: 1.2;
   text-align: center;
+  min-height: 60px; /* altura fija para que todas las cards alineen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .card-front h3 .age {
   display: block;
   font-size: 1.2rem; /* más grande para que se vea bien */
