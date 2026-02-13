@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- FUENTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
@@ -148,7 +148,6 @@
   </div>
 </section>
 
-
     <!-- MAPA -->
     <section id="mapa">
       <h2>Ubicación</h2>
@@ -211,6 +210,17 @@
       } else {
         header.classList.remove("header--scrolled");
       }
+    });
+  </script>
+
+  <!-- FLIP EN MÓVIL -->
+  <script>
+    // Detecta toque en cards y activa flip
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('touch-active');
+      });
     });
   </script>
 
