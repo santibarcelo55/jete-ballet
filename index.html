@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- FUENTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
@@ -79,74 +79,74 @@
 
     <!-- CLASES -->
    <section class="gallery" id="gallery">
-  <h2>Nuestras Clases</h2>
+      <h2>Nuestras Clases</h2>
 
-  <div class="cards">
+      <div class="cards">
 
-    <!-- Pre Ballet 3 y 4 años -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="img/bailarina.jpg" alt="Pre Ballet">
-          <h3>
-            Pre-Ballet
-            <span class="age">(3-4 años)</span>
-          </h3>
+        <!-- Pre Ballet 3 y 4 años -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/bailarina.jpg" alt="Pre Ballet">
+              <h3>
+                Pre Ballet
+                <span class="age">(3-4 años)</span>
+              </h3>
+            </div>
+            <div class="card-back">
+              <p>Iniciación a la danza, donde aprenden los primeros pasos básicos a través del juego y la técnica clásica.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-back">
-          <p>Primeros pasos en danza y diversión.</p>
+
+        <!-- Ballet Inicial 5 y 6 años -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/bailarina.jpg" alt="Ballet Inicial">
+              <h3>
+                Ballet Inicial
+                <span class="age">(5-6 años)</span>
+              </h3>
+            </div>
+            <div class="card-back">
+              <p>Trabajamos la técnica desde la base: fortaleciendo pies, mejorando la postura y desarrollando la flexibilidad, sin dejar de lado la expresión artística.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Ballet Principiantes -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/bailarina.jpg" alt="Ballet Principiantes">
+              <h3>
+                Ballet Principiantes
+              </h3>
+            </div>
+            <div class="card-back">
+              <p>Comenzamos con el trabajo específico de barra y centro para desarrollar la base técnica del ballet, incorporando disciplina, coordinación y control corporal.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ballet Adultos -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/bailarina.jpg" alt="Ballet Adultos">
+              <h3>
+                Ballet Adultos
+              </h3>
+            </div>
+            <div class="card-back">
+              <p>Clases para personas con o sin experiencia, enfocadas en el cuidado del movimiento, el acompañamiento del proceso de aprendizaje y el disfrute de la danza.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Ballet Inicial 5 y 6 años -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="img/bailarina.jpg" alt="Ballet Inicial">
-          <h3>
-            Ballet Inicial
-            <span class="age">(5-6 años)</span>
-          </h3>
-        </div>
-        <div class="card-back">
-          <p>Desarrollo de técnica y fundamentos del ballet.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ballet Principiantes -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="img/bailarina.jpg" alt="Ballet Principiantes">
-          <h3>
-            Ballet Principiantes
-          </h3>
-        </div>
-        <div class="card-back">
-          <p>Clases de barra y centro aprendiendo la técnica clásica.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ballet Adultos -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="img/bailarina.jpg" alt="Ballet Adultos">
-          <h3>
-            Ballet Adultos
-          </h3>
-        </div>
-        <div class="card-back">
-          <p>Clases personalizadas para adultos con o sin experiencia.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- MAPA -->
     <section id="mapa">
@@ -213,15 +213,21 @@
     });
   </script>
 
-  <!-- FLIP EN MÓVIL -->
+  <!-- FLIP CARDS -->
   <script>
-    // Detecta toque en cards y activa flip
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('touch-active');
+    // Solo para móviles: toggle flip al tocar
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          const inner = card.querySelector(".card-inner");
+          inner.classList.toggle("flipped");
+        });
       });
-    });
+    }
   </script>
 
 </body>
