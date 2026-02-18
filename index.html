@@ -10,7 +10,8 @@
   <!-- SEO básico -->
   <meta name="description" content="Academia de ballet en San José de Mayo, Uruguay para niños, jóvenes y adultos. Clases de Pre Ballet, Inicial, Principiantes y Adultos en Jeté Ballet Studio.">
   <meta name="keywords" content="academia de ballet en San José de Mayo, clases de ballet en San José Uruguay, ballet niños San José, ballet adultos San José de Mayo, Jeté Ballet Studio">
-<meta name="author" content="Jeté Ballet Studio">
+  <meta name="author" content="Jeté Ballet Studio">
+
   <!-- Open Graph (redes sociales) -->
   <meta property="og:title" content="Jeté Ballet Studio | Academia de Ballet en San José de Mayo">
   <meta property="og:description" content="Clases de ballet para niños, jóvenes y adultos. Pre Ballet, Inicial, Principiantes y Adultos.">
@@ -28,6 +29,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
   <!-- HEADER -->
   <header class="header">
@@ -81,22 +83,20 @@
     <section class="teacher" id="teacher">
       <div class="container teacher-content">
         <img src="img/guada-baile.jpg" alt="Guadalupe Calero" class="teacher-photo">
-
         <div class="teacher-text">
           <h2>Nuestra Profesora</h2>
           <p>
             Las clases están a cargo de Guadalupe Calero, bailarina egresada que continúa su formación en Montevideo.
-             Participó en YGP Argentina y obtuvo una beca en el Real Conservatorio Profesional de Danza Mariaemma, España. 
-             Con formación pedagógica, promueve disciplina, expresión artística y confianza en alumnos de todas las edades.
+            Participó en YGP Argentina y obtuvo una beca en el Real Conservatorio Profesional de Danza Mariaemma, España. 
+            Con formación pedagógica, promueve disciplina, expresión artística y confianza en alumnos de todas las edades.
           </p>
         </div>
       </div>
     </section>
 
     <!-- CLASES -->
-   <section class="gallery" id="gallery">
+    <section class="gallery" id="gallery">
       <h2>Nuestras Clases</h2>
-
       <div class="cards">
 
         <!-- Pre Ballet 3 y 4 años -->
@@ -136,9 +136,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="img/bailarina.jpg" alt="Ballet Principiantes">
-              <h3>
-                Ballet Principiantes
-              </h3>
+              <h3>Ballet Principiantes
+                <span class="age">(7-9 años)</span></h3>
             </div>
             <div class="card-back">
               <p>Comenzamos con el trabajo específico de barra y centro para desarrollar la base técnica del ballet, incorporando disciplina, coordinación y control corporal.</p>
@@ -151,9 +150,7 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="img/bailarina.jpg" alt="Ballet Adultos">
-              <h3>
-                Ballet Adultos
-              </h3>
+              <h3>Ballet Adultos</h3>
             </div>
             <div class="card-back">
               <p>Clases para personas con o sin experiencia, enfocadas en el cuidado del movimiento, el acompañamiento del proceso de aprendizaje y el disfrute de la danza.</p>
@@ -183,32 +180,27 @@
   </main>
 
   <!-- FOOTER -->
-<footer class="footer" id="footer">
-  <p>© 2026 Jeté Ballet Studio</p>
-
-  <div class="social-links-footer">
-    <a href="https://instagram.com/jete_balletstudio" target="_blank" rel="noopener">
-      <img src="img/instagram.png" alt="Instagram" class="social-icon-footer">
-    </a>
-
-    <a href="https://wa.me/59899326379?text=Hola!%20Quiero%20información%20sobre%20las%20clases%20de%20ballet" target="_blank" rel="noopener">
-      <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-footer">
-    </a>
-  </div>
-</footer>
+  <footer class="footer" id="footer">
+    <p>© 2026 Jeté Ballet Studio</p>
+    <div class="social-links-footer">
+      <a href="https://instagram.com/jete_balletstudio" target="_blank" rel="noopener">
+        <img src="img/instagram.png" alt="Instagram" class="social-icon-footer">
+      </a>
+      <a href="https://wa.me/59899326379?text=Hola!%20Quiero%20información%20sobre%20las%20clases%20de%20ballet" target="_blank" rel="noopener">
+        <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-footer">
+      </a>
+    </div>
+  </footer>
 
   <!-- ICONOS FIJOS -->
   <div class="social-fixed">
-  
-  <a href="https://instagram.com/jete_balletstudio" target="_blank" rel="noopener">
-    <img src="img/instagram.png" alt="Instagram" class="social-icon-fixed">
-  </a>
-
-  <a href="https://wa.me/59899326379?text=Hola!%20Quiero%20información%20sobre%20las%20clases%20de%20ballet" target="_blank" rel="noopener">
-    <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-fixed">
-  </a>
-
-</div>
+    <a href="https://instagram.com/jete_balletstudio" target="_blank" rel="noopener">
+      <img src="img/instagram.png" alt="Instagram" class="social-icon-fixed">
+    </a>
+    <a href="https://wa.me/59899326379?text=Hola!%20Quiero%20información%20sobre%20las%clases%20de%20ballet" target="_blank" rel="noopener">
+      <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon-fixed">
+    </a>
+  </div>
 
   <!-- JS MENU -->
   <script>
@@ -234,16 +226,16 @@
   </script>
 
   <!-- FLIP CARDS -->
-<script>
-  // Flip de cada card al tocar/click, en móvil y desktop
-  const cards = document.querySelectorAll(".card");
+  <script>
+    const cards = document.querySelectorAll(".card");
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const inner = card.querySelector(".card-inner");
-      inner.classList.toggle("flipped"); // voltea o vuelve al estado inicial
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const inner = card.querySelector(".card-inner");
+        inner.classList.toggle("flipped");
+      });
     });
-  });
-</script>
+  </script>
+
 </body>
 </html>

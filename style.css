@@ -234,7 +234,7 @@ h1, h2, h3 {
 
 .gallery h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;       /* un poco más grande que antes */
+  font-size: 2.2rem;
   color: #8e5aa9;
   margin-bottom: 2rem;
 }
@@ -244,15 +244,15 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* centra todas las cards */
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
 }
 
 .card {
-  flex: 0 0 250px;      /* ancho fijo */
+  flex: 0 0 250px;
   height: 350px;
-  perspective: 1000px;  /* perspectiva 3D */
+  perspective: 1000px;
   cursor: pointer;
 }
 
@@ -266,7 +266,7 @@ h1, h2, h3 {
 }
 
 .card:hover .card-inner {
-  transform: rotateY(180deg); /* hover en PC */
+  transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
@@ -302,14 +302,15 @@ h1, h2, h3 {
   font-size: 1.3rem;
   line-height: 1.2;
   text-align: center;
-  min-height: 60px; /* altura fija para que todas las cards alineen */
+  min-height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .card-front h3 .age {
   display: block;
-  font-size: 1.2rem; /* más grande para que se vea bien */
+  font-size: 1.2rem;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
   color: #555;
@@ -324,6 +325,11 @@ h1, h2, h3 {
   font-size: 0.95rem;
   padding: 20px;
   text-align: center;
+}
+
+/* ===== Voltear card con clase flipped ===== */
+.card-inner.flipped {
+  transform: rotateY(180deg);
 }
 
 /* ================= FOOTER ================= */
@@ -365,72 +371,11 @@ h1, h2, h3 {
   opacity: 1;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-   .nav-links {
-  position: absolute;
-  top: 100%;        /* justo debajo del header/botón */
-  right: 1rem;      /* alineado con el botón hamburguesa */
-  width: auto;      /* ancho según contenido, no toda la pantalla */
-  min-width: 150px; /* ancho mínimo opcional */
-  display: none;    
-  flex-direction: column;
-  background-color: #c7b9df;
-  text-align: left; /* links alineados a la izquierda */
-  padding: 0.5rem 1rem;
-  border-radius: 6px;       /* esquinas redondeadas */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra para que parezca dropdown */
-  z-index: 1000;
-}
-  .nav-links.nav-open {
-    display: flex;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .teacher-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cards {
-    justify-content: flex-start; /* scroll en móvil */
-    gap: 15px;
-  }
-}
-
-/* ===== AJUSTE LOGO Y TITULO EN MÓVIL ===== */
-@media (max-width: 768px) {
-  .logo {
-    width: 55px; 
-  }
-
-  .header-title {
-    font-size: 1.2rem; 
-    text-align: center;
-  }
-
-  .header-content {
-    justify-content: space-between; 
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block; 
-  }
-}
-
+/* ================= MAPA ================= */
 #mapa {
   padding: 50px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #8e5aa9, #c2b4db); /* violeta oscuro a violeta más claro */
+  background: linear-gradient(135deg, #8e5aa9, #c2b4db);
   border-radius: 10px;
 }
 
@@ -438,7 +383,7 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff; /* mejor contraste sobre violeta oscuro */
+  color: #fff;
 }
 
 #map {
@@ -447,21 +392,68 @@ h1, h2, h3 {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
-/* ================= AJUSTE CENTRADO DE CARDS EN DESKTOP ================= */
-.cards {
-  display: flex;
-  flex-wrap: wrap;      
-  gap: 20px;
-  justify-content: center; /* centra las cards horizontalmente */
-  align-items: flex-start; 
-  width: 100%;
-  margin: 0 auto;
-}
 
-.card {
-  flex: 0 0 250px;     
-}
-/* === Voltear card con clase flipped === */
-.card-inner.flipped {
-  transform: rotateY(180deg);
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Logo y header */
+  .logo {
+    width: 55px;
+  }
+  .header-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .header-content {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Nav links desplegado más pegado al borde */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #c7b9df;
+    width: 200px;
+    padding: 0.8rem 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    display: none;
+  }
+  .nav-links.nav-open {
+    display: flex;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Cards */
+  .cards {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  /* Desactivar hover en móvil */
+  .card:hover .card-inner {
+    transform: none;
+  }
+
+  /* Teacher section */
+  .teacher-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Ajuste mapa en móvil */
+  #map {
+    width: 100%;
+    max-width: 400px;
+    height: 250px; /* altura más compacta en móvil */
+    margin: 0 auto;
+  }
 }
