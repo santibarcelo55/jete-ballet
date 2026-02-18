@@ -412,14 +412,14 @@ h1, h2, h3 {
     display: block;
   }
 
-  /* Nav links desplegado más pegado al borde */
+  /* Nav links desplegado más pegado al borde derecho */
   .nav-links {
     position: absolute;
     top: 100%;
     right: 0;
     background: #c7b9df;
     width: 200px;
-    padding: 0.8rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     flex-direction: column;
     gap: 1rem;
     display: none;
@@ -432,9 +432,9 @@ h1, h2, h3 {
     gap: 0.5rem;
   }
 
-  /* Cards */
+  /* Cards centradas en móvil */
   .cards {
-    justify-content: flex-start;
+    justify-content: center;
     gap: 15px;
   }
 
@@ -451,9 +451,8 @@ h1, h2, h3 {
 
   /* Ajuste mapa en móvil */
   #map {
-    width: 100%;
-    max-width: 400px;
-    height: 250px; /* altura más compacta en móvil */
+    width: 90%;
+    height: 250px;
     margin: 0 auto;
   }
 }
