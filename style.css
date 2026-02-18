@@ -371,18 +371,21 @@ h1, h2, h3 {
     display: block;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    background-color: #c7b9df;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
+   .nav-links {
+  position: absolute;
+  top: 100%;        /* justo debajo del header/botón */
+  right: 1rem;      /* alineado con el botón hamburguesa */
+  width: auto;      /* ancho según contenido, no toda la pantalla */
+  min-width: 150px; /* ancho mínimo opcional */
+  display: none;    
+  flex-direction: column;
+  background-color: #c7b9df;
+  text-align: left; /* links alineados a la izquierda */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;       /* esquinas redondeadas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra para que parezca dropdown */
+  z-index: 1000;
+}
   .nav-links.nav-open {
     display: flex;
   }
@@ -457,4 +460,8 @@ h1, h2, h3 {
 
 .card {
   flex: 0 0 250px;     
+}
+/* === Voltear card con clase flipped === */
+.card-inner.flipped {
+  transform: rotateY(180deg);
 }
