@@ -469,7 +469,7 @@ h1, h2, h3 {
 
 .horario-card span {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #2f2f2f;
 }
@@ -565,6 +565,10 @@ h1, h2, h3 {
   width: 100%;          /* ocupa todo el ancho de su columna */
   min-height: 420px;
   padding: 30px 20px;
+}
+/* ACHICAR SOLO LA CARD DE LA IZQUIERDA */
+.horario-col:first-child .horario-card {
+  width: 230px; /* un poco más angosta */
 }
 /* AJUSTE TEXTO PARA CELULAR SIN CORTAR PALABRAS */
 .horario-card span {
