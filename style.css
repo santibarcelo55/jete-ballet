@@ -469,7 +469,7 @@ h1, h2, h3 {
 
 .horario-card span {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #2f2f2f;
 }
@@ -536,43 +536,29 @@ h1, h2, h3 {
     text-align: center;
   }
 
-  /* HORARIOS */
-  .horarios {
-    padding: 70px 20px;
-  }
-
-  .horarios-titulo {
-    font-size: 28px;
-  }
-
-  /* HORARIOS MÓVIL - 3 columnas horizontales */
+/* HORARIOS MÓVIL */
 .horarios-grid {
   display: flex;
-  flex-direction: row;      /* filas horizontales */
-  justify-content: space-between; /* espacio entre columnas */
-  gap: 20px;                /* separación entre columnas */
-  flex-wrap: nowrap;         /* evita que se apilen */
-  overflow-x: auto;          /* permite deslizar si no caben */
-  -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+  flex-direction: row;
+  gap: 15px;           /* un poquito menos de gap */
+  flex-wrap: nowrap;    /* horizontal con scroll */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .horario-col {
-  flex: 0 0 33%;       /* cada columna ocupa 1/3 del ancho */
-  min-width: 0;    /* ancho mínimo para que el contenido no se rompa */
+  flex: 0 0 30%;       /* un poco menos que 33% para que el padding no rompa */
+  min-width: 0;
 }
 
 .horario-card {
-  width: 100%;          /* ocupa todo el ancho de su columna */
+  width: 100%;         /* ocupa el ancho de la columna */
   min-height: 420px;
-  padding: 30px 20px;
+  padding: 20px 15px;  /* reduce padding para que no se solapen */
 }
-/* ACHICAR SOLO LA CARD DE LA IZQUIERDA */
-.horario-col:first-child .horario-card {
-  width: 230px; /* un poco más angosta */
-}
-/* AJUSTE TEXTO PARA CELULAR SIN CORTAR PALABRAS */
+
 .horario-card span {
-    font-size: 14px; /* o 15px según necesites */
+  font-size: 13px;
 }
 
   /* MAPA */
