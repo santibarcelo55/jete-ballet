@@ -503,4 +503,98 @@ h1, h2, h3 {
     height: 250px;
     margin: 0 auto;
   }
+   /* ===== HORARIOS MÓVIL ===== */
+
+  .horarios {
+    padding: 70px 20px;
+  }
+
+  .horarios-titulo {
+    font-size: 28px;
+  }
+
+  .horarios-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .horario-card {
+    width: 90%;
+    max-width: 340px;
+    min-height: auto;
+    padding: 40px 30px;
+  }
+}
+/* ===== HORARIOS PREMIUM ===== */
+
+.horarios {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #f3e8f6, #ffffff);
+}
+
+
+.horarios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.horarios-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 70px;
+  color: #2d2a32;
+  position: relative;
+}
+
+.horarios-titulo::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: #c9a3c6;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.horarios-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.horario-col h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #8a6f8f;
+}
+
+.horario-card {
+  background: #f3d6e8;
+  padding: 50px 40px;
+  border-radius: 30px;
+  width: 280px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.horario-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.horario-card span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2f2f2f;
 }
