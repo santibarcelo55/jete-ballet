@@ -558,7 +558,7 @@ h1, h2, h3 {
 
 .horario-col {
   flex: 0 0 33%;       /* cada columna ocupa 1/3 del ancho */
-  min-width: 200px;    /* ancho mínimo para que el contenido no se rompa */
+  min-width: 0;    /* ancho mínimo para que el contenido no se rompa */
 }
 
 .horario-card {
