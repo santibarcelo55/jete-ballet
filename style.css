@@ -402,137 +402,12 @@ h1, h2, h3 {
 }
 
 /* ================= RESPONSIVE MÓVIL ================= */
-@media (max-width: 768px) {
-
-  #mapa {
-    padding: 40px 20px 20px 20px;
-  }
-
-  #map {
-    width: 100%;       /* sigue ocupando todo el ancho del contenedor */
-    max-width: 400px;  /* limita tamaño en móvil */
-    height: 250px;     /* altura compacta */
-  }
-}
-
-
-/* ================= RESPONSIVE MÓVIL ================= */
-@media (max-width: 768px) {
-
-  /* ===== LOGO Y HEADER ===== */
-  .logo {
-    width: 55px;
-  }
-
-  .header-title {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .header-content {
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  /* Menu hamburguesa */
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #c7b9df;
-    width: 200px;
-    padding: 0.8rem 0.5rem;
-    flex-direction: column;
-    gap: 1rem;
-    display: none;
-    z-index: 999;
-  }
-
-  .nav-links.nav-open {
-    display: flex;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-left: 0;
-  }
-
-  /* ===== CARDS EN MÓVIL ===== */
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;  /* centra las cards */
-    gap: 15px;
-    margin: 0 auto;
-  }
-
-  .cards .card {
-    flex: 1 1 90%;       /* ocupa hasta 90% del ancho del contenedor */
-    max-width: 250px;    /* no se agranda demasiado */
-    cursor: pointer;     /* mantiene la sensación de clic */
-  }
-
-  /* Desactivar hover en móvil */
-  .card:hover .card-inner {
-    transform: none;
-  }
-
-  /* Activar flip al tocar (solo con JS agregando la clase .flipped) */
-  .card .card-inner.flipped {
-    transform: rotateY(180deg);
-  }
-
-  /* ===== TEACHER SECTION ===== */
-  .teacher-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* ===== MAPA MÓVIL ===== */
-  #mapa {
-    padding: 40px 20px 20px 20px;
-  }
-
-  #map {
-    max-width: 100%;
-    height: 250px;
-    margin: 0 auto;
-  }
-   /* ===== HORARIOS MÓVIL ===== */
-
-  .horarios {
-    padding: 70px 20px;
-  }
-
-  .horarios-titulo {
-    font-size: 28px;
-  }
-
-  .horarios-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .horario-card {
-    width: 90%;
-    max-width: 340px;
-    min-height: auto;
-    padding: 40px 30px;
-  }
-}
 /* ===== HORARIOS PREMIUM ===== */
 
 .horarios {
   padding: 100px 20px;
   background: linear-gradient(to bottom, #f3e8f6, #ffffff);
 }
-
 
 .horarios-container {
   max-width: 1200px;
@@ -597,4 +472,102 @@ h1, h2, h3 {
   font-size: 16px;
   font-weight: 500;
   color: #2f2f2f;
+}
+
+/* ================= RESPONSIVE MÓVIL ================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .logo { width: 55px; }
+
+  .header-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .header-content {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #c7b9df;
+    width: 200px;
+    padding: 0.8rem 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    display: none;
+    z-index: 999;
+  }
+
+  .nav-links.nav-open { display: flex; }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0;
+  }
+
+  /* CARDS */
+  .cards {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cards .card {
+    flex: 1 1 90%;
+    max-width: 250px;
+  }
+
+  .card:hover .card-inner { transform: none; }
+
+  .card .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* TEACHER */
+  .teacher-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* HORARIOS */
+  .horarios {
+    padding: 70px 20px;
+  }
+
+  .horarios-titulo {
+    font-size: 28px;
+  }
+
+  .horarios-grid {
+    display: flex;          /* 🔥 importante */
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .horario-card {
+    width: 90%;
+    max-width: 340px;
+    min-height: 420px;      /* mantiene el diseño */
+    padding: 40px 30px;
+  }
+
+  /* MAPA */
+  #mapa {
+    padding: 40px 20px 20px 20px;
+  }
+
+  #map {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    margin: 0 auto;
+  }
 }
