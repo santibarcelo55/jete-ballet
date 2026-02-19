@@ -545,22 +545,30 @@ h1, h2, h3 {
     font-size: 28px;
   }
 
-  .horarios-grid {
+  /* HORARIOS MÓVIL - 3 columnas horizontales */
+.horarios-grid {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: row;      /* filas horizontales */
+  justify-content: space-between; /* espacio entre columnas */
+  gap: 20px;                /* separación entre columnas */
+  flex-wrap: nowrap;         /* evita que se apilen */
+  overflow-x: auto;          /* permite deslizar si no caben */
+  -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
 }
 
 .horario-col {
-  flex: 1 1 30%;
-  min-width: 100px;
+  flex: 0 0 33%;       /* cada columna ocupa 1/3 del ancho */
+  min-width: 200px;    /* ancho mínimo para que el contenido no se rompa */
 }
 
 .horario-card {
-  width: 100%;
+  width: 100%;          /* ocupa todo el ancho de su columna */
   min-height: 420px;
   padding: 30px 20px;
+}
+/* AJUSTE TEXTO PARA CELULAR SIN CORTAR PALABRAS */
+.horario-card span {
+    font-size: 14px; /* o 15px según necesites */
 }
 
   /* MAPA */
