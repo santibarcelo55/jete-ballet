@@ -485,7 +485,6 @@ h1, h2, h3 {
   color: #2f2f2f;
 }
 
-/* ================= RESPONSIVE MÓVIL ================= */
 @media (max-width: 768px) {
 
   /* HEADER */
@@ -524,7 +523,8 @@ h1, h2, h3 {
     padding-left: 0;
   }
 
-  /* CARDS */
+  /* CARDS FIX (IMPORTANTE → arregla las imágenes que no aparecen) */
+
   .cards {
     justify-content: center;
     gap: 15px;
@@ -533,47 +533,71 @@ h1, h2, h3 {
   .cards .card {
     flex: 1 1 90%;
     max-width: 250px;
+    height: auto;
+    min-height: 360px;
   }
 
-  .card:hover .card-inner { transform: none; }
+  .card-inner {
+    height: 100%;
+  }
 
-  .card .card-inner.flipped {
+  .card-front,
+  .card-back {
+    height: auto;
+    min-height: 360px;
+    overflow: visible;
+  }
+
+  .card-front img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card:hover .card-inner {
+    transform: none;
+  }
+
+  .card-inner.flipped {
     transform: rotateY(180deg);
   }
 
   /* TEACHER */
+
   .teacher-content {
     flex-direction: column;
     text-align: center;
   }
-  
 
-/* HORARIOS MÓVIL */
-.horarios-grid {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;           /* un poquito menos de gap */
-  flex-wrap: nowrap;    /* horizontal con scroll */
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+  /* HORARIOS MÓVIL */
 
-.horario-col {
-  flex: 0 0 30%;       /* un poco menos que 33% para que el padding no rompa */
-  min-width: 0;
-}
+  .horarios-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.horario-card {
-  width: 100%;         /* ocupa el ancho de la columna */
-  min-height: 420px;
-  padding: 20px 15px;  /* reduce padding para que no se solapen */
-}
+  .horario-col {
+    flex: 0 0 30%;
+    min-width: 0;
+  }
 
-.horario-card span {
-  font-size: 12px;
-}
+  .horario-card {
+    width: 100%;
+    min-height: 420px;
+    padding: 20px 15px;
+  }
+
+  .horario-card span {
+    font-size: 12px;
+  }
 
   /* MAPA */
+
   #mapa {
     padding: 40px 20px 20px 20px;
   }
@@ -584,6 +608,7 @@ h1, h2, h3 {
     height: 250px;
     margin: 0 auto;
   }
+
 }
 /* ================= FRASE ================= */
 
@@ -627,4 +652,34 @@ section {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.8;
+}
+/* ================= FIX CARDS MÓVILES ================= */
+@media (max-width: 768px) {
+
+  .card {
+    height: auto !important;
+    min-height: 360px;
+  }
+
+  .card-inner {
+    position: relative !important;
+    height: auto !important;
+    transform-style: flat;
+  }
+
+  .card-front,
+  .card-back {
+    position: relative !important;
+    width: 100%;
+    height: auto !important;
+    min-height: 360px;
+    overflow: visible !important;
+  }
+
+  .card-front img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+  }
+
 }
