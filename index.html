@@ -277,29 +277,13 @@
       }
     });
   </script>
-
-  <!-- FLIP CARDS -->
-  <script>
+ <!-- flip cards-->
+<script>
 document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("touchend", function (e) {
-    e.preventDefault();
-
-    const inner = this.querySelector(".card-inner");
-
-    // Cerrar otras cards abiertas
-    document.querySelectorAll(".card-inner.flipped").forEach(el => {
-      if (el !== inner) el.classList.remove("flipped");
-    });
-
-    inner.classList.toggle("flipped");
-  }, { passive: false });
-
-  card.addEventListener("click", function (e) {
-    const inner = this.querySelector(".card-inner");
-    inner.classList.toggle("flipped");
+  card.addEventListener("click", () => {
+    card.querySelector(".card-inner").classList.toggle("flipped");
   });
 });
 </script>
-
 </body>
 </html>
