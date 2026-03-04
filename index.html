@@ -280,8 +280,18 @@
  <!-- flip cards-->
 <script>
 document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
-    card.querySelector(".card-inner").classList.toggle("flipped");
+  card.addEventListener("click", function(e) {
+    const inner = this.querySelector(".card-inner");
+    
+    // 1. Buscamos si hay OTRA card abierta y la cerramos
+    document.querySelectorAll(".card-inner").forEach(otherInner => {
+      if (otherInner !== inner) {
+        otherInner.classList.remove("flipped");
+      }
+    });
+
+    // 2. Volteamos la card actual
+    inner.classList.toggle("flipped");
   });
 });
 </script>
