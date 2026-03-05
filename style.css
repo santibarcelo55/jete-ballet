@@ -620,6 +620,7 @@ h1, h2, h3 {
   .map-container iframe {
     height: 100% !important; /* Obliga al mapa a llenar solo esos 250px */
   }
+  }
 /* ================= FRASE ================= */
 
 .frase {
@@ -668,4 +669,7 @@ h1, h2, h3 {
   .card:hover .card-inner {
     transform: rotateY(180deg);
   }
+}
+html {
+  scroll-padding-top: 100px;
 }
